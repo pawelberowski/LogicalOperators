@@ -71,4 +71,29 @@ console.log(booleanFunctionSelector(7, yesFunction, noFunction)) // Yes
 console.log(booleanFunctionSelector(false, yesFunction, noFunction)) // No
 console.log(booleanFunctionSelector(undefined, yesFunction, noFunction)) // No
 
+console.log('~~~~~~~~~~~~~~ Transportation on vacation ~~~~~~~~~~~~~~')
+
+function baseCost(days, rate) {
+    return days * rate;
+}
+
+function discountRate(days) {
+    if ( days >= 7 ) {
+        return 50;
+    }
+    else if ( days >= 3 ) {
+        return 20;
+    }
+    return 0;
+}
+
+function rentalCarCost(days) {
+    return baseCost(days, 40) - discountRate(days);
+}
+
+console.log(rentalCarCost(1)) // 40
+console.log(rentalCarCost(4)) // 140
+console.log(rentalCarCost(7)) // 230
+console.log(rentalCarCost(10)) // 350
+
 console.log('~~~~~~~~~~~~~~ The end ~~~~~~~~~~~~~~')
