@@ -96,4 +96,40 @@ console.log(rentalCarCost(4)) // 140
 console.log(rentalCarCost(7)) // 230
 console.log(rentalCarCost(10)) // 350
 
+console.log('~~~~~~~~~~~~~~ What\'s the real floor? ~~~~~~~~~~~~~~')
+
+function getRealFloor(americanFloor) {
+    if (americanFloor > 13) {
+        return americanFloor - 2;
+    } else if (americanFloor > 0) {
+        return americanFloor - 1;
+    }
+    return americanFloor
+}
+
+console.log(getRealFloor(-2)) // -2
+console.log(getRealFloor(2)) // 1
+console.log(getRealFloor(0)) // 0
+console.log(getRealFloor(20)) // 18
+
+console.log('~~~~~~~~~~~~~~ Rock Paper Scissors Lizard Spock ~~~~~~~~~~~~~~')
+
+function rockPaperScissorsLizardSpock(playerOne, playerTwo) {
+    if (playerOne === playerTwo) {
+        return 'Draw!';
+    }
+    const rules = {
+        rock: ['scissors', 'lizard'], paper: ['rock', 'spock'], scissors: ['paper', 'lizard']
+        , lizard: ['spock', 'paper'], spock: ['scissors', 'rock']
+    };
+    if (rules[playerOne].includes(playerTwo)) {
+        return 'Player 1 Won!';
+    }
+    return 'Player 2 Won!';
+}
+
+console.log(rockPaperScissorsLizardSpock('scissors', 'lizard')) // 'Player 1 Won!'
+console.log(rockPaperScissorsLizardSpock('spock', 'spock')) // 'Draw!'
+console.log(rockPaperScissorsLizardSpock('rock','spock')) // 'Player 2 Won!'
+
 console.log('~~~~~~~~~~~~~~ The end ~~~~~~~~~~~~~~')
