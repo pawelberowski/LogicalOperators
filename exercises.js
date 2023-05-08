@@ -49,4 +49,26 @@ console.log(isOnlyOneValueTrue(8,'16')) // false
 console.log(isOnlyOneValueTrue(0,true)) // true
 console.log(isOnlyOneValueTrue('',false)) // false
 
+console.log('~~~~~~~~~~~~~~ The \'if\' function ~~~~~~~~~~~~~~')
+
+/* this worked in codewars:
+function _if(bool, func1, func2) {
+  if (bool) {return func1()}
+  return func2()
+}
+ */
+function booleanFunctionSelector(value, truthyFunction, falsyFunction) {
+    if (value) {return truthyFunction();}
+    return falsyFunction();
+}
+function yesFunction() {
+    return 'Yes';
+}
+function noFunction() {
+    return 'No';
+}
+console.log(booleanFunctionSelector(7, yesFunction, noFunction)) // Yes
+console.log(booleanFunctionSelector(false, yesFunction, noFunction)) // No
+console.log(booleanFunctionSelector(undefined, yesFunction, noFunction)) // No
+
 console.log('~~~~~~~~~~~~~~ The end ~~~~~~~~~~~~~~')
