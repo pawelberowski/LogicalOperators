@@ -50,7 +50,9 @@ console.log('~~~~~~~~~~~~~~ The \'if\' function ~~~~~~~~~~~~~~')
 
 
 function booleanFunctionSelector(value, truthyFunction, falsyFunction) {
-    if (value) {return truthyFunction();}
+    if (value) {
+        return truthyFunction();
+    }
     return falsyFunction();
 }
 function yesFunction() {
@@ -70,10 +72,10 @@ function baseCost(days, rate) {
 }
 
 function discountRate(days) {
-    if ( days >= 7 ) {
+    if (days >= 7) {
         return 50;
     }
-    else if ( days >= 3 ) {
+    if (days >= 3) {
         return 20;
     }
     return 0;
