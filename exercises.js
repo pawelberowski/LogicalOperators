@@ -25,11 +25,8 @@ console.log(areValuesWithinMargin(8.1, 5, 3)) // 1
 
 console.log('~~~~~~~~~~~~~~ Boolean logic from scratch ~~~~~~~~~~~~~~')
 
-const isAnyValueTrue = (valueA, ValueB) => {
-    if (valueA) {
-        return true;
-    }
-    return Boolean(ValueB);
+const isAnyValueTrue = (valueA, valueB) => {
+    return !(!valueA && !valueB)
 }
 
 const isOnlyOneValueTrue = (valueA, valueB) => {
@@ -51,12 +48,7 @@ console.log(isOnlyOneValueTrue('',false)) // false
 
 console.log('~~~~~~~~~~~~~~ The \'if\' function ~~~~~~~~~~~~~~')
 
-/* this worked in codewars:
-function _if(bool, func1, func2) {
-  if (bool) {return func1()}
-  return func2()
-}
- */
+
 function booleanFunctionSelector(value, truthyFunction, falsyFunction) {
     if (value) {return truthyFunction();}
     return falsyFunction();
