@@ -95,7 +95,8 @@ console.log('~~~~~~~~~~~~~~ What\'s the real floor? ~~~~~~~~~~~~~~')
 function getRealFloor(americanFloor) {
     if (americanFloor > 13) {
         return americanFloor - 2;
-    } else if (americanFloor > 0) {
+    }
+    if (americanFloor > 0) {
         return americanFloor - 1;
     }
     return americanFloor
@@ -113,8 +114,11 @@ function rockPaperScissorsLizardSpock(playerOne, playerTwo) {
         return 'Draw!';
     }
     const rules = {
-        rock: ['scissors', 'lizard'], paper: ['rock', 'spock'], scissors: ['paper', 'lizard']
-        , lizard: ['spock', 'paper'], spock: ['scissors', 'rock']
+        rock: ['scissors', 'lizard'],
+        paper: ['rock', 'spock'],
+        scissors: ['paper', 'lizard'],
+        lizard: ['spock', 'paper'],
+        spock: ['scissors', 'rock'],
     };
     if (rules[playerOne].includes(playerTwo)) {
         return 'Player 1 Won!';
